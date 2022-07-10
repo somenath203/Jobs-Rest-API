@@ -29,7 +29,10 @@ help of `express-rate-limit`.
 
 <br />
 
-<<<<<<< HEAD
+Click to checkout and try the API yourself in the swagger documentation of this API :- https://somm-jobs-api-prod.herokuapp.com/
+
+<br />
+
 ## Instructions regarting authorization in swagger docs.
 
 ### Step 1 :- 
@@ -37,9 +40,6 @@ help of `express-rate-limit`.
 After registering for a new account or logging in with an existing account, we will get a token :- 
 
 ![alt text](./Screenshot%20(37).png)
-=======
-Click to checkout and try the API yourself in the swagger documentation of this API :- https://somm-jobs-api-prod.herokuapp.com/
->>>>>>> 6764bc9c5aaf766cab65895271eff91873198d99
 
 
 ### Step 2 :- 
