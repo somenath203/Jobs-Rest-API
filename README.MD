@@ -27,6 +27,10 @@ This API also has the feature of restricting user from making too
 many repeated requests requests contionusly to API endpoints with the
 help of `express-rate-limit`.
 
+<br />
+
+Click to checkout and try the API yourself in the swagger documentation of this API :- https://somm-jobs-api-prod.herokuapp.com/
+
 
 
 
