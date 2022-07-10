@@ -33,7 +33,7 @@ Click to checkout and try the API yourself in the swagger documentation of this 
 
 <br />
 
-## Instructions regarting authorization in swagger docs.
+## Instructions regarting authorization in swagger docs
 
 ### Step 1 :- 
 
