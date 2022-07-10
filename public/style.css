@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+    background-image: linear-gradient(to bottom, #8edc94, #a7dc92, #bddd92, #cfdd96, #dfdd9d);
+}
+
+.container {
+  min-width: 100vw;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8rem;
+}
+
+h1 {
+  font-family: 'Prompt', sans-serif;
+  font-size: 5rem;
+  letter-spacing: 0.5rem;
+  color: #A10035;
+}
+
+h1::after {
+  content: '';
+  border-bottom: 5px solid #FF7396;
+  width: 38.5rem;
+  display: block;
+  margin: 6px auto;
+}
+
+button {
+    padding: 1.5rem 4rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-image: linear-gradient(to right, #e658ce, #dd57c0, #d357b2, #c856a5, #bd5699);
+
+    transition: all 0.4s;
+}
+
+button:hover {
+    transform: translateY(-10px);
+    background-image: linear-gradient(to right, #e65861, #dc5766, #d25669, #c8566c, #bd566e);
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-size: 2rem;
+    color: #fff;
+}
+
+@media (max-width: 590px) {
+    .container {
+        text-align: center;
+    }
+
+    h1::after {
+        content: '';
+        border-bottom: 5px solid #FF7396;
+        width: 28.5rem;
+        display: block;
+        margin: 6px auto;
+      }
+}

@@ -1,0 +1,280 @@
+openapi: 3.0.0
+info:
+  title: Jobs Restful API
+  description: >-
+    This is a Restful API created with express.js.
+
+
+    Here, a recuriter who wants to hire candidate for his/her company can use this API.
+
+
+    Here, in this API, the recruiter first needs to register for an account. Then, the recruiter can create as many job openings as possible and all the job openings created by the recruiter will be stored in his/her account.
+
+
+    The recruiter also has the option of editing a particular job posting as well as deleting a particular job.
+  contact: {}
+  version: "1.0"
+servers:
+  - url: https://somm-jobs-api-prod.herokuapp.com/api/v1
+    variables: {}
+paths:
+  /jobs:
+    get:
+      tags:
+        - Jobs
+      summary: Get all jobs of an authenticated user
+      description: The work of this route is to allow the user to fetch all the jobs he/she has created.
+      operationId: Getalljobsofanauthenticateduser
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://somm-jobs-api-prod.herokuapp.com/api/v1
+          variables: {}
+    post:
+      tags:
+        - Jobs
+      summary: Create a new Job by Authenticated User
+      description: The work of this route is to allow the user to create a new job posting.
+      operationId: CreateanewJobbyAuthenticatedUser
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateanewJobbyAuthenticatedUserRequest"
+            example:
+              company: userfive
+              position: position of som5 one in infosys
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://somm-jobs-api-prod.herokuapp.com/api/v1
+          variables: {}
+  /jobs/{id}:
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+        description: The job ID
+    get:
+      tags:
+        - Jobs
+      summary: Get single jobs of an authenticated user
+      description: The work of this route is to allow the user to fetch a particular job using the job's ID from the list of all the jobs he/she has created.
+      operationId: Getsinglejobsofanauthenticateduser
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://somm-jobs-api-prod.herokuapp.com/api/v1
+          variables: {}
+
+    patch:
+      tags:
+        - Jobs
+      summary: Update job by an authenticated user
+      description: The work of this route is to let the user edit any job post using the ID of the post.
+      operationId: Updatejobbyanauthenticateduser
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdatejobbyanauthenticateduserRequest"
+            example:
+              company: adobe
+              position: manager at adobe
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://somm-jobs-api-prod.herokuapp.com/api/v1
+          variables: {}
+    delete:
+      tags:
+        - Jobs
+      summary: Delete job by an authenticated user
+      description: The work of this route is to let the user delete any job post using the ID of the post.
+      operationId: Deletejobbyanauthenticateduser
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://somm-jobs-api-prod.herokuapp.com/api/v1
+          variables: {}
+  /auth/register:
+    post:
+      tags:
+        - Authentication
+      summary: Register User
+      description: The work of this route is to allow users to register for a new account.
+      operationId: RegisterUser
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RegisterUserRequest"
+            example:
+              fullname: SomenathProdOne Choudhury
+              email: somprodone@gmail.com
+              password: "123456"
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security: []
+      servers:
+        - url: https://somm-jobs-api-prod.herokuapp.com/api/v1
+          variables: {}
+  /auth/login:
+    post:
+      tags:
+        - Authentication
+      summary: Login User
+      description: The work of this route is to allow users to login into their account.
+      operationId: LoginUser
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoginUserRequest"
+            example:
+              email: somprodone@gmail.com
+              password: "123456"
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security: []
+      servers:
+        - url: https://somm-jobs-api-prod.herokuapp.com/api/v1
+          variables: {}
+  /:
+    get:
+      tags:
+        - Welcome
+      summary: Welcome
+      description: The work of this route is to display a welcome message to the user when the user first visit the API.
+      operationId: Welcome
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      servers:
+        - url: https://somm-jobs-api-prod.herokuapp.com
+          variables: {}
+components:
+  schemas:
+    RegisterUserRequest:
+      title: RegisterUserRequest
+      required:
+        - fullname
+        - email
+        - password
+      type: object
+      properties:
+        fullname:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        fullname: SomenathProdOne Choudhury
+        email: somprodone@gmail.com
+        password: "123456"
+    LoginUserRequest:
+      title: LoginUserRequest
+      required:
+        - email
+        - password
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        email: somprodone@gmail.com
+        password: "123456"
+    CreateanewJobbyAuthenticatedUserRequest:
+      title: CreateanewJobbyAuthenticatedUserRequest
+      required:
+        - company
+        - position
+      type: object
+      properties:
+        company:
+          type: string
+        position:
+          type: string
+      example:
+        company: userfive
+        position: position of som5 one in infosys
+    UpdatejobbyanauthenticateduserRequest:
+      title: UpdatejobbyanauthenticateduserRequest
+      required:
+        - company
+        - position
+      type: object
+      properties:
+        company:
+          type: string
+        position:
+          type: string
+      example:
+        company: adobe
+        position: manager at adobe
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+security: []
+tags:
+  - name: Welcome
+    description: "The work of this section is to display the user with a welcome message."
+  - name: Authentication
+    description: "The work of this section is to allow user to register for a new account and login into his/her account."
+  - name: Jobs
+    description: "The work of this section is to allow authenticated user to create a new job posting, fetch all the job posting that the the user has created, fetch a particular job posting, edit a particular job posting as well as delete a particular job posting."
