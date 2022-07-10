@@ -29,9 +29,32 @@ help of `express-rate-limit`.
 
 <br />
 
+<<<<<<< HEAD
+## Instructions regarting authorization in swagger docs.
+
+### Step 1 :- 
+
+After registering for a new account or logging in with an existing account, we will get a token :- 
+
+![alt text](./Screenshot%20(37).png)
+=======
 Click to checkout and try the API yourself in the swagger documentation of this API :- https://somm-jobs-api-prod.herokuapp.com/
+>>>>>>> 6764bc9c5aaf766cab65895271eff91873198d99
 
 
+### Step 2 :- 
+
+Copy the token, then, open **Authorize** dialog box located at the starting of the docs.
+
+![alt text](./Screenshot%20(38).png)
 
 
+### Step 3 :- 
 
+After opening, paste the token and then click on **login**
+
+![alt text](./Screenshot%20(39).png)
+
+<br />
+
+Now, you will be able to create, update, fetch and as well as delete tasks.
