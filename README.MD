@@ -59,4 +59,4 @@ After opening, paste the token and then click on **login**
 
 Now, you will be able to create, update, fetch and as well as delete jobs.
 
-If you don't follow the above steps after login and directly try to create or edit or fetch jobs, then we will get this error :- "errorMsg": "Authentication Error | No headers found"
+If you don't follow the above steps after login and directly try to create or edit or fetch or delete jobs, then we will get this error :- "errorMsg": "Authentication Error | No headers found"
