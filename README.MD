@@ -33,7 +33,7 @@ Click to checkout and try the API yourself in the swagger documentation of this 
 
 <br />
 
-## Instructions regarting authorization in swagger docs
+## Instructions regarding authorization in swagger docs
 
 ### Step 1 :- 
 
@@ -51,7 +51,7 @@ Copy the token, then, open **Authorize** dialog box located at the starting of t
 
 ### Step 3 :- 
 
-After opening, paste the token and then click on **login**
+After opening, paste the token and then click on **Authorize**
 
 ![alt text](./Screenshot%20(39).png)
 
